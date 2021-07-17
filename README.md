@@ -27,3 +27,8 @@ npm run start:dev
 
 ```
 
+## 3. Prerequisite
+
+a. MongoDB should be installed in local/you can point to exisiting mongoDB by changing the URL.
+b. Node.js setup.
+
