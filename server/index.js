@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
-const { createShortUrl } = require("./controllers/shortUrl");
+const { createShortUrl, getShortUrls } = require("./controllers/shortUrl");
 
 const app = express();
 app.use(cors());
@@ -25,6 +25,7 @@ mongoose
 app.get("/", (req, res) => res.send("Short Url Generator"));
 
 app.post("/shorturl/create", createShortUrl);
+app.get("/shorturl/get", getShortUrls);
 
 const port = process.env.PORT || 5000;
 
