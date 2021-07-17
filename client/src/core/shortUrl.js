@@ -7,7 +7,6 @@ export const getShortUrls = () => {
 }
 
 export const createShortUrl = (data) => {
-    console.log(data);
     return fetch(apiEndpoint + "shorturl/create", {
         method: 'POST',
         headers: {
@@ -16,7 +15,7 @@ export const createShortUrl = (data) => {
         body: JSON.stringify(data)
     })
         .then(response => response.json())
-        .catch(error => console.log(error));
+        .catch(error => error);
 }
 
 export const clickShortUrls = (shortUrl) => {

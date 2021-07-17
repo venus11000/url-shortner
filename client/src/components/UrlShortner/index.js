@@ -25,7 +25,10 @@ const UrlShortner = () => {
             url: url
         }
         let response = await createShortUrl(data);
-        response && setFetchData(true)
+        if (!response.error) {
+            response && setFetchData(true)
+        }
+        return response;
     }
 
     const clickShortUrlsAndUpdate = async (shortUrl) => {

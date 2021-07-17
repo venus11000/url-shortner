@@ -4,6 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const { createShortUrl, getShortUrls, clickUrl } = require("./controllers/shortUrl");
+const { validateUrl } = require("./validators/shortUrl");
 
 const app = express();
 app.use(cors());
@@ -24,7 +25,7 @@ mongoose
 
 app.get("/", (req, res) => res.send("Short Url Generator"));
 
-app.post("/shorturl/create", createShortUrl);
+app.post("/shorturl/create", validateUrl, createShortUrl);
 app.get("/shorturl/get", getShortUrls);
 app.get("/shorturl/clickUrl/:shortUrl", clickUrl);
 
