@@ -19,3 +19,14 @@ exports.getShortUrls = (req, res) => {
             res.status(400).json({ "message": "Unable to fetch Urls" });
         })
 }
+
+exports.clickUrl = (req, res) => {
+    ShortUrl.findOne({ shortUrl: req.params.shortUrl })
+        .then(shortUrl => {
+            shortUrl.clicks++;
+            shortUrl.save();
+
+            res.send(shortUrl);
+        })
+        .catch(error => res.status(404).json(error));
+}
