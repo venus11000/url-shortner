@@ -1,0 +1,15 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.form-container_wrapper {
+    max-width: 800px;
+    width: 100%;
+}
+.form-container_fields-container {
+    /* display: flex;
+    align-items: center; */
+}
