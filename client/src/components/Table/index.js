@@ -16,7 +16,7 @@ const useStyles = makeStyles({
 
 const NoDataComponent = () => <TableRow><TableCell colSpan="3">No Data...</TableCell></TableRow>;
 
-export default function BasicTable({ data, clickShortUrls }) {
+export default function BasicTable({ data = [], clickShortUrls }) {
     const classes = useStyles();
 
     return (
